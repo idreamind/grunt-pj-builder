@@ -8,6 +8,4 @@ To use, run the following command:
 
     $ git clone https://github.com/idreamind/grunt-pj-builder.git
 
-    $ cd grunt-pj-builder
-
-    $ grunt
+    $ cd grunt-pj-builder && grunt
