@@ -9,3 +9,7 @@ To use, run the following command (ONLY ONCE!):
     $ git clone https://github.com/idreamind/grunt-pj-builder.git
 
     $ cd grunt-pj-builder && grunt
+	
+or
+
+	$ cd grunt-pj-builder && grunt name:YourProjectName

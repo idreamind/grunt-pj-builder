@@ -1,5 +1,5 @@
 {
-  "name": "Grunt-Pj-Builder",
+  "name": "angular",
   "description": "Script to build the tree of directories and files of the project.",
   "version": "0.3.5",
   "homepage": "https://github.com/idreamind/grunt-pj-builder",
