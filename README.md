@@ -12,4 +12,8 @@ To use, run the following command (ONLY ONCE!):
 	
 or
 
-	$ cd grunt-pj-builder && grunt name:YourProjectName
+	$ cd grunt-pj-builder 
+	$ grunt name:YourProjectName
+	$ grunt name:YourProjectName
+	
+Yes, two times! We have the problem, but I don`t know how to solve it...
