@@ -116,11 +116,11 @@ module.exports = function(grunt) {
                     printArray( indexHtml, 'index.html' ),
                     printArray( gitIgnore, '.gitignore' ),
                     'cd ../grunt-pj-builder/js_plugins',
-                    'move angular.min.js ../../' + cleanName() + '/js/angular/',
-                    'move angular-animate.min.js ../../' + cleanName() + '/js/angular/',
-                    'move angular-route.min.js ../../' + cleanName() + '/js/angular/',
-                    'move angular-touch.min.js ../../' + cleanName() + '/js/angular/',
-                    'move jquery-2.1.1.min.js ../../' + cleanName() + '/js/vendors/',
+                    'copy /y angular.min.js ..\\..\\' + cleanName() + '\\js\\angular',
+                    'copy /y angular-animate.min.js ..\\..\\' + cleanName() + '\\js\\angular',
+                    'copy /y angular-route.min.js ..\\..\\' + cleanName() + '\\js\\angular',
+                    'copy /y angular-touch.min.js ..\\..\\' + cleanName() + '\\js\\angular',
+                    'copy /y jquery-2.1.1.min.js ..\\..\\' + cleanName() + '\\js\\vendors',
                     'cd ../../' + cleanName(),
                     'git init',
                     'git add --all',
@@ -143,6 +143,14 @@ module.exports = function(grunt) {
 		    		from: '{{{}}}',
 		    		to: cleanName()
 		    	}]
+		  	},
+		  	clean: {
+		  		src: ['../grunt-pj-builder/name.*'],
+		    	overwrite: true,                     
+		    	replacements: [{
+		      		from: cleanName(),                  
+		      		to: ''
+		    	}]
 		  	}
 		}
     });
@@ -159,10 +167,9 @@ module.exports = function(grunt) {
     	name = name.toString();
 
     	// Node.js
-    	var fs = require('fs');
+		var fs = require('fs');    	
     	fs.writeFileSync('name.json', name, {flags: 'w'});
 
-		grunt.task.run(['shell::multiple','replace:html']);
-    	
+    	grunt.task.run(['shell::multiple','replace::html', 'replace::clean']);
     });
 };
